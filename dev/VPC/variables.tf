@@ -15,18 +15,18 @@ variable "ipv4_netmask_length" {
 }
 
 variable "ipv6_cidr_block" {
-    type = string
+  type = string
 
 }
 
 variable "ipv6bordergroup" {
-    type = string
-  
+  type = string
+
 }
 
 variable "dnssupport" {
-    type = bool
-  
+  type = bool
+
 }
 
 variable "dnshostnames" {
@@ -42,6 +42,6 @@ variable "generatedipv6" {
 }
 
 variable "ipv6_ipam_pool_id" {
-    type = string
-  
+  type = string
+
 }

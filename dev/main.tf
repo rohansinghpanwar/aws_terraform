@@ -1,26 +1,35 @@
 module "vpc" {
-    source = "../VPC"
-cidr_block = var.cidr_block
-dnshostnames = var.dnshostnames
+  source              = "../dev/VPC"
+  cidr_block          = var.cidr_block
+  ipv4_netmask_length = var.ipv4_netmask_length
+  ipv6_cidr_block     = var.ipv6_cidr_block
+  ipv6_ipam_pool_id   = var.ipv6_ipam_pool_id
+  ipv6bordergroup     = var.ipv6bordergroup
+  usagemetrics        = var.usagemetrics
+  instance_tenancy    = var.instance_tenancy
+  dnssupport          = var.dnssupport
+  ipv4_ipam_pool_id   = var.ipv4_ipam_pool_id
+  generatedipv6       = var.generatedipv6
+  dnshostnames        = var.dnshostnames
 }
 
 module "subnet" {
-  source = "../Subnet"
-  vpc_id     = var.vpc_id
-  cidr_block = var.cidr_block
-  assign_ipv6_address_on_creation = var.assignipv6
-  availability_zone = var.az
-  availability_zone_id = var.azid
-  customer_owned_ipv4_pool = var.ownedipv4
-  enable_dns64 = var.enable_dns64
-  enable_lni_at_device_index = var.enablelni
-  enable_resource_name_dns_a_record_on_launch = var.a
-  enable_resource_name_dns_aaaa_record_on_launch = var.aaa
+  source          = "../dev/Subnet"
+  vpc_id          = module.vpc.id
+  cidr_block      = var.cidr_block
+  pvtdns          = var.pvtdns
+  assignipv6      = var.assignipv6
+  mapownedip      = var.mapownedip
+  az              = var.az
+  azid            = var.azid
+  mappublicip     = var.mappublicip
+  a               = var.a
+  enablelni       = var.enablelni
+  ownedipv4       = var.ownedipv4
+  aaa             = var.aaa
+  enable_dns64    = var.enable_dns64
   ipv6_cidr_block = var.ipv6_cidr_block
-  ipv6_native = var.ipv6_native
-  map_customer_owned_ip_on_launch = var.mapownedip
-  map_public_ip_on_launch = var.mappublicip
-  outpost_arn = var.outpost_arn
-  private_dns_hostname_type_on_launch = var.pvtdns
-  
+  ipv6_native     = var.ipv6_native
+  outpost_arn     = var.outpost_arn
+
 }

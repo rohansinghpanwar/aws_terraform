@@ -15,18 +15,18 @@ variable "ipv4_netmask_length" {
 }
 
 variable "ipv6_cidr_block" {
-    type = string
+  type = string
 
 }
 
-variable "ipv6_cidr_block_network_border_group" {
-    type = string
-  
+variable "ipv6bordergroup" {
+  type = string
+
 }
 
 variable "dnssupport" {
-    type = bool
-  
+  type = bool
+
 }
 
 variable "dnshostnames" {
@@ -42,26 +42,26 @@ variable "generatedipv6" {
 }
 
 variable "ipv6_ipam_pool_id" {
-    type = string
-  
+  type = string
+
 }
 
 variable "vpc_id" {
-    type = string
-  
+  type = string
+
 }
 
-variable "assign_ipv6_address_on_creation" {
-    type = bool
-  
+variable "assignipv6" {
+  type = bool
+
 }
-variable "availability_zone" {
-    type = string
- 
+variable "az" {
+  type = string
+
 }
 variable "azid" {
-    type = string
-  }
+  type = string
+}
 variable "ownedipv4" {
   type = string
 }

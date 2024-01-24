@@ -1,22 +1,22 @@
 variable "vpc_id" {
-    type = string
-  
+  type = string
+
 }
 variable "cidr_block" {
-    type = string
-  
+  type = string
+
 }
 variable "assignipv6" {
-    type = bool
-  
+  type = bool
+
 }
 variable "az" {
-    type = string
- 
+  type = string
+
 }
 variable "azid" {
-    type = string
-  }
+  type = string
+}
 variable "ownedipv4" {
   type = string
 }
