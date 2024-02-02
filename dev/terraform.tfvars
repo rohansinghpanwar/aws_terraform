@@ -1,5 +1,5 @@
 cidr_block = "192.0.0.0/16"
-
+vpcnum = [ "3" ]
 dnshostnames        = null
 dnssupport          = null
 generatedipv6       = null
@@ -25,3 +25,4 @@ mapownedip   = null
 mappublicip  = null
 outpost_arn  = null
 pvtdns       = null
+subnetnum = [ "3" ]

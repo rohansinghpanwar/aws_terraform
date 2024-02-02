@@ -1,4 +1,5 @@
 module "vpc" {
+
   source              = "../dev/VPC"
   cidr_block          = var.cidr_block
   ipv4_netmask_length = var.ipv4_netmask_length
@@ -11,6 +12,8 @@ module "vpc" {
   ipv4_ipam_pool_id   = var.ipv4_ipam_pool_id
   generatedipv6       = var.generatedipv6
   dnshostnames        = var.dnshostnames
+  vpcnum = var.vpcnum
+  
   
 }
 
@@ -32,5 +35,5 @@ module "subnet" {
   ipv6_cidr_block = var.ipv6_cidr_block
   ipv6_native     = var.ipv6_native
   outpost_arn     = var.outpost_arn
-
+  subnetnum = var.subnetnum
 }

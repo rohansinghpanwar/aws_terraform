@@ -1,4 +1,5 @@
 resource "aws_vpc" "demo" {
+  for_each = var.vpcnum
   cidr_block                           = var.cidr_block
   instance_tenancy                     = var.instance_tenancy
   ipv4_ipam_pool_id                    = var.ipv4_ipam_pool_id
@@ -12,7 +13,8 @@ resource "aws_vpc" "demo" {
   ipv6_ipam_pool_id                    = var.ipv6_ipam_pool_id
   
   tags = {
-    name = "vpc_demo"
+    name = each.value
+
   }
 
 }

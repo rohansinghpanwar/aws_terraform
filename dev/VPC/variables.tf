@@ -43,5 +43,8 @@ variable "generatedipv6" {
 
 variable "ipv6_ipam_pool_id" {
   type = string
+}
 
+variable "vpcnum" {
+  type = set(string)
 }

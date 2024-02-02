@@ -1,4 +1,6 @@
 resource "aws_subnet" "demo" {
+
+  for_each = var.subnetnum
   vpc_id                                         = var.vpc_id
   cidr_block                                     = var.cidr_block
   assign_ipv6_address_on_creation                = var.assignipv6
@@ -17,6 +19,6 @@ resource "aws_subnet" "demo" {
   private_dns_hostname_type_on_launch            = var.pvtdns
 
   tags = {
-    Name = "demo"
+    Name = each.value
   }
 }

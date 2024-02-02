@@ -93,3 +93,11 @@ variable "outpost_arn" {
 variable "pvtdns" {
   type = string
 }
+
+variable "vpcnum" {
+  type = set(string)
+}
+
+variable "subnetnum" {
+  type = set(string)
+}

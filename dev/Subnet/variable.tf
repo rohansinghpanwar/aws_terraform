@@ -50,3 +50,7 @@ variable "outpost_arn" {
 variable "pvtdns" {
   type = string
 }
+
+variable "subnetnum" {
+  type = set(string)
+} 
