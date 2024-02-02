@@ -11,11 +11,12 @@ module "vpc" {
   ipv4_ipam_pool_id   = var.ipv4_ipam_pool_id
   generatedipv6       = var.generatedipv6
   dnshostnames        = var.dnshostnames
+  
 }
 
 module "subnet" {
   source          = "../dev/Subnet"
-  vpc_id          = module.vpc.id
+  vpc_id          = module.vpc.vpc_id
   cidr_block      = var.cidr_block
   pvtdns          = var.pvtdns
   assignipv6      = var.assignipv6

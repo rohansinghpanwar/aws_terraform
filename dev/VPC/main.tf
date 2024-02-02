@@ -10,7 +10,7 @@ resource "aws_vpc" "demo" {
   enable_network_address_usage_metrics = var.usagemetrics
   assign_generated_ipv6_cidr_block     = var.generatedipv6
   ipv6_ipam_pool_id                    = var.ipv6_ipam_pool_id
-
+  
   tags = {
     name = "vpc_demo"
   }

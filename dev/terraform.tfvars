@@ -11,7 +11,7 @@ ipv6bordergroup     = null
 usagemetrics        = null
 ipv6_ipam_pool_id   = null
 
-vpc_id       = null
+vpc_id  = null
 assignipv6   = null
 az           = null
 azid         = null
